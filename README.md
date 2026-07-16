@@ -8,7 +8,7 @@ Skills are portable instruction packages (`SKILL.md`) that teach an orchestrator
 
 | Skill | Path | Description |
 |-------|------|-------------|
-| **grok-implementer** | [`grok-implementer/`](./grok-implementer/) | Route hands-on implementation to **Grok headless CLI** — only when the user explicitly asks. Orchestrator freezes a work-order; Grok implements; orchestrator reviews the diff and re-runs proof. |
+| **grok-implementer** | [`grok-implementer/`](./grok-implementer/) | Delegate implementation to Grok headless CLI (explicit opt-in only). |
 
 Add a skill → add a row here and a directory with `SKILL.md`. Full contracts, flags, and prompts live in each skill’s own docs, not in this file.
 
@@ -49,22 +49,6 @@ Refer to your agent’s documentation for the exact skills path and discovery ru
 1. Install the skill folder (see above) and meet any prerequisites listed in that skill’s `SKILL.md`.
 2. Explicitly ask the orchestrator to use it when you want it (e.g. “use grok-implementer …”).
 3. Follow the workflow defined in that skill; do not expect silent auto-activation unless the skill says otherwise.
-
-## Adding a skill
-
-1. Create `<skill-name>/SKILL.md` with YAML frontmatter at least:
-
-   ```yaml
-   ---
-   name: skill-name
-   description: >
-     When to use this skill (triggers) and what it does in one short blurb.
-   ---
-   ```
-
-2. Document in the body: who runs it, when to use / skip, invoke steps, failure handling, and any auth/binary prerequisites.
-3. Add one row to the **Skills** table above.
-4. Prefer concrete recipes over vague advice; match the operational tone of existing skills.
 
 ## License
 
